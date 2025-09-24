@@ -18,6 +18,23 @@ const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
 // --- REFERENCIAS A ELEMENTOS DEL DOM ---
+// --- REFERENCIAS A ELEMENTOS DEL DOM ---
+const accessScreen = document.getElementById('access-screen');
+const invitationContent = document.getElementById('invitation-content');
+const accessButton = document.getElementById('access-button');
+const accessCodeInput = document.getElementById('access-code');
+const errorMessage = document.getElementById('error-message');
+const giftListButton = document.getElementById('gift-list-button');
+const giftListContainer = document.getElementById('gift-list-container');
+const confirmationModal = document.getElementById('confirmation-modal');
+const confirmationText = document.getElementById('confirmation-text');
+const confirmYesButton = document.getElementById('confirm-yes');
+const confirmNoButton = document.getElementById('confirm-no');
+
+// Nuevas referencias
+const guestNamesElement = document.getElementById('guest-names');
+const guestCountElement = document.getElementById('guest-count');
+
 const accessScreen = document.getElementById('access-screen');
 const invitationContent = document.getElementById('invitation-content');
 const accessButton = document.getElementById('access-button');
@@ -49,6 +66,26 @@ async function loadEventDetails() {
     }
 }
 
+async function loadGuestDetails() {
+    if (!userAccessCode) return;
+
+    const invitationRef = ref(db, `invitaciones/${userAccessCode}`);
+    const snapshot = await get(invitationRef);
+
+    if (snapshot.exists()) {
+        const data = snapshot.val();
+        const names = data.nombres.join(' & ');
+        guestNamesElement.textContent = names;
+        guestCountElement.textContent = `Invitados permitidos: ${data.invitadosPermitidos}`;
+    }
+}
+function showInvitation() {
+    accessScreen.classList.add('hidden');
+    invitationContent.classList.remove('hidden');
+    loadEventDetails();
+    loadGuestDetails(); // Agrega esta línea
+    listenForGiftUpdates();
+}
 // --- LÓGICA DE ACCESO ---
 accessButton.addEventListener('click', async () => {
     const code = accessCodeInput.value.trim().toUpperCase();
