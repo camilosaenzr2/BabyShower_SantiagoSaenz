@@ -318,3 +318,19 @@ footer {
     padding: 10px;
     text-align: left;
 }
+/* --- Responsividad --- */
+@media (max-width: 600px) {
+    /* ... otros estilos para movil ... */
+
+    .gift-item {
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .gift-item p {
+        font-size: 0.9em; /* Reducir el tamaño de la fuente */
+    }
+
+    .gift-item button {
+        padding: 6px 10px; /* Reducir el padding del botón */
+    }
+}
