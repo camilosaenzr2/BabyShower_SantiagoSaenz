@@ -188,7 +188,6 @@ p {
     /* Agrega esta línea para habilitar el desplazamiento solo cuando se muestra la lista */
     overflow-y: auto;
 }
-}
 
 .gift-item {
     display: flex;
