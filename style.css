@@ -180,11 +180,15 @@ p {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.7s ease-in-out;
+    /* Agrega esta línea para que aparezca la barra de desplazamiento vertical */
+    overflow-y: auto;
 }
 
 .gift-list-container.show {
     max-height: 1000px; /* Suficientemente grande para contener la lista */
     margin-top: 20px;
+    /* Elimina o ignora esta propiedad aquí, ya que la definimos arriba */
+    overflow: visible; /* O la que desees */ 
 }
 
 .gift-item {
