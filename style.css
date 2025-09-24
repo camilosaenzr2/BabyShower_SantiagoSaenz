@@ -1,0 +1,294 @@
+:root {
+    --sage-green: #8F9779;
+    --gold: #B48C2A;
+    --cream: #F5F5DC;
+    --dark-text: #3D403A;
+    --white: #FFFFFF;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--cream);
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* --- Pantalla de Acceso --- */
+.access-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--sage-green);
+}
+
+.access-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 90%;
+    max-width: 400px;
+}
+
+.access-box h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    margin-top: 0;
+}
+
+#access-code {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 15px 0;
+    box-sizing: border-box;
+}
+
+#access-button {
+    background-color: var(--sage-green);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+#access-button:hover {
+    background-color: var(--dark-text);
+}
+
+.error {
+    color: #D8000C;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* --- Contenido Principal --- */
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    padding: 60px 20px;
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('https://source.unsplash.com/random/1200x400/?baby,party,sage');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.header-text h1, .header-text h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+    margin: 0;
+}
+
+.header-text h1 {
+    font-size: 3.5em;
+    font-weight: 700;
+}
+
+.header-text h2 {
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+section {
+    background: var(--white);
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 2em;
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--sage-green);
+    display: inline-block;
+}
+
+p {
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+.welcome p {
+    font-size: 1.2em;
+    font-style: italic;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- Galería --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* --- Lista de Regalos --- */
+#gift-list-button {
+    background-color: var(--gold);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#gift-list-button:hover {
+    background-color: #a57d25;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.gift-list-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out;
+}
+
+.gift-list-container.show {
+    max-height: 1000px; /* Suficientemente grande para contener la lista */
+    margin-top: 20px;
+}
+
+.gift-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.gift-item:last-child {
+    border-bottom: none;
+}
+
+.gift-item p {
+    margin: 0;
+    font-size: 1em;
+    text-align: left;
+}
+
+.gift-item button {
+    background-color: var(--sage-green);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.gift-item button:hover {
+    background-color: var(--dark-text);
+}
+
+.gift-item.taken {
+    text-decoration: line-through;
+    color: #999;
+    background-color: #f9f9f9;
+}
+
+.gift-item.taken button {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+footer {
+    padding: 40px 20px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--sage-green);
+}
+
+/* --- Modal --- */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 16px;
+}
+
+#confirm-yes {
+    background-color: var(--sage-green);
+    color: white;
+}
+
+#confirm-no {
+    background-color: #ccc;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 2.5em;
+    }
+    .header-text h2 {
+        font-size: 1.2em;
+    }
+    section {
+        padding: 20px;
+    }
+}
