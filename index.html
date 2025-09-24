@@ -24,30 +24,35 @@
     <main id="invitation-content" class="hidden">
         <header>
             <div class="header-text">
-                <h1>Oh, Baby!</h1>
+                <h1 id="event-title"></h1>
                 <h2>Estamos contando los días para conocernos</h2>
             </div>
         </header>
 
         <section class="welcome">
-            <p>Con una alegría que no nos cabe en el corazón, queremos hacerte parte del capítulo más dulce de nuestra historia. Tú has sido una pieza clave en nuestro camino y por eso, tu presencia en la celebración de esta nueva vida es el mejor regalo que podríamos recibir. Gracias por ser y estar. ¡Prepárate para un día lleno de amor, risas y ternura!</p>
+             <p>Con una alegría que no nos cabe en el corazón, queremos hacerte parte del capítulo más dulce de nuestra historia. Tú has sido una pieza clave en nuestro camino y por eso, tu presencia en la celebración de esta nueva vida es el mejor regalo que podríamos recibir. Gracias por ser y estar. ¡Prepárate para un día lleno de amor, risas y ternura!</p>
         </section>
         
         
         <section class="details">
             <h3>Detalles del Evento</h3>
-            <p><strong>Fecha:</strong> Sábado, 23 de Noviembre de 2025</p>
-            <p><strong>Hora:</strong> 3:00 PM</p>
-            <p><strong>Lugar:</strong> Salón de Eventos "La Cigüeña Feliz", Calle Falsa 123, Bogotá</p>
-            </section>
+            <p><strong>Fecha:</strong> <span id="event-date"></span></p>
+            <p><strong>Hora:</strong> <span id="event-time"></span></p>
+            <p><strong>Lugar:</strong> <span id="event-location"></span></p>
+            <a id="event-map-link" href="#" target="_blank" class="map-button">Ver en el mapa</a>
+            <p id="event-note" class="note"></p>
+        </section>
 
         <section class="gallery">
             <h3>Nuestros Momentos</h3>
             <div class="gallery-grid">
-                <img src="imagenes/foto1.jpg" alt="Recuerdo del embarazo 1">
-                <img src="imagenes/foto2.jpg" alt="Recuerdo del embarazo 2">
-                <img src="imagenes/foto3.jpg" alt="Recuerdo del embarazo 3">
-                <img src="imagenes/foto4.jpg" alt="Recuerdo del embarazo 4">
+                <img src="imagenes/g1.jpg" alt="Recuerdo del embarazo 1">
+                <img src="imagenes/g2.jpg" alt="Recuerdo del embarazo 2">
+                <img src="imagenes/g3.jpg" alt="Recuerdo del embarazo 3">
+                <img src="imagenes/g4.jpg" alt="Recuerdo del embarazo 4">
+                <img src="imagenes/g5.jpg" alt="Recuerdo del embarazo 5">
+                <img src="imagenes/g6.jpg" alt="Recuerdo del embarazo 6">
+                <img src="imagenes/g7.jpg" alt="Recuerdo del embarazo 7">
             </div>
         </section>
 
@@ -60,7 +65,7 @@
         </section>
         
         <footer>
-            <p>Con todo nuestro amor, [Tu Nombre] y [Nombre de tu Pareja]</p>
+            <p>Con todo nuestro amor, <span id="parents-names"></span></p>
         </footer>
     </main>
 
@@ -72,10 +77,7 @@
         </div>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
-    <script src="script.js"></script>
+    <script src="script.js" type="module"></script>
 
 </body>
 </html>
