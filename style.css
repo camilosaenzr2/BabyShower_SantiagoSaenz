@@ -292,3 +292,29 @@ footer {
         padding: 20px;
     }
 }
+
+/* --- Añade esto al final de tu archivo style.css --- */
+
+.map-button {
+    display: inline-block;
+    margin-top: 15px;
+    background-color: var(--sage-green);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.map-button:hover {
+    background-color: var(--dark-text);
+}
+
+.note {
+    margin-top: 20px;
+    font-style: italic;
+    background-color: #f8f8f8;
+    border-left: 4px solid var(--gold);
+    padding: 10px;
+    text-align: left;
+}
