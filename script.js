@@ -108,7 +108,7 @@ function listenForGiftUpdates() {
 
             if (gift.tomado === true) {
                 giftElement.classList.add('taken');
-                selectButton.textContent = `Seleccionado por ${gift.seleccionadoPor || 'alguien'}`;
+                selectButton.textContent = `Seleccionado`;
                 selectButton.disabled = true;
             } else {
                 selectButton.textContent = 'Elegir Regalo';
