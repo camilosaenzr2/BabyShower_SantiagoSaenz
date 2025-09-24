@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getDatabase, ref, get, onValue, update } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
-// Tu configuración de Firebase, tal como la proporcionaste
+// Tu configuración de Firebase
 const firebaseConfig = {
     apiKey: "AIzaSyD1ZDBAiPZiSUU-swsB_h_zecivcGjkHvs",
     authDomain: "invitacion-babyshower.firebaseapp.com",
@@ -98,7 +98,7 @@ accessButton.addEventListener('click', async () => {
 
 function showError(message) {
     errorMessage.textContent = message;
-    setTimeout(() => { errorMessage.textContent = ''; }, 3000);
+    setTimeout(() => { errorMessage.textContent = '', 3000 });
 }
 
 // --- LÓGICA DE LA LISTA DE REGALOS ---
