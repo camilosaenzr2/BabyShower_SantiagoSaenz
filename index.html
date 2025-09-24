@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oh Baby! | Te estamos esperando</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="access-screen" class="access-container">
+        <div class="access-box">
+            <h2>Invitación Privada</h2>
+            <p>Por favor, introduce tu código de acceso.</p>
+            <input type="text" id="access-code" placeholder="Tu código aquí">
+            <button id="access-button">Entrar</button>
+            <p id="error-message" class="error"></p>
+        </div>
+    </div>
+
+    <main id="invitation-content" class="hidden">
+        <header>
+            <div class="header-text">
+                <h1>Oh, Baby!</h1>
+                <h2>Estamos contando los días para conocernos</h2>
+            </div>
+        </header>
+
+        <section class="welcome">
+            <p>Con una alegría que no nos cabe en el corazón, queremos hacerte parte del capítulo más dulce de nuestra historia. Tú has sido una pieza clave en nuestro camino y por eso, tu presencia en la celebración de esta nueva vida es el mejor regalo que podríamos recibir. Gracias por ser y estar. ¡Prepárate para un día lleno de amor, risas y ternura!</p>
+        </section>
+        
+        
+        <section class="details">
+            <h3>Detalles del Evento</h3>
+            <p><strong>Fecha:</strong> Sábado, 23 de Noviembre de 2025</p>
+            <p><strong>Hora:</strong> 3:00 PM</p>
+            <p><strong>Lugar:</strong> Salón de Eventos "La Cigüeña Feliz", Calle Falsa 123, Bogotá</p>
+            </section>
+
+        <section class="gallery">
+            <h3>Nuestros Momentos</h3>
+            <div class="gallery-grid">
+                <img src="imagenes/foto1.jpg" alt="Recuerdo del embarazo 1">
+                <img src="imagenes/foto2.jpg" alt="Recuerdo del embarazo 2">
+                <img src="imagenes/foto3.jpg" alt="Recuerdo del embarazo 3">
+                <img src="imagenes/foto4.jpg" alt="Recuerdo del embarazo 4">
+            </div>
+        </section>
+
+        <section class="gifts">
+            <h3>Lista de Regalos</h3>
+            <p>Tu cariño es nuestro mayor tesoro. Si además deseas obsequiarnos algo, hemos preparado una lista con amor.</p>
+            <button id="gift-list-button">Ver Lista de Regalos</button>
+            <div id="gift-list-container" class="gift-list-container">
+                </div>
+        </section>
+        
+        <footer>
+            <p>Con todo nuestro amor, [Tu Nombre] y [Nombre de tu Pareja]</p>
+        </footer>
+    </main>
+
+    <div id="confirmation-modal" class="modal hidden">
+        <div class="modal-content">
+            <p id="confirmation-text">¿Estás seguro de que quieres elegir este regalo? Esta acción es definitiva.</p>
+            <button id="confirm-yes">Sí, es un regalo</button>
+            <button id="confirm-no">No, volver</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
